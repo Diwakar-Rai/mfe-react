@@ -14,7 +14,7 @@ export async function fetchNotes() {
   const token = await requestToken();
   if (!token) throw new Error("Not authentiated");
   const res = await fetch(`${API_BASE}/notes`, {
-    headers: { Authrization: token },
+    headers: { Authorization: token },
   });
   if (!res.ok) {
     throw new Error("Failed to fetch notes");
