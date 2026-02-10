@@ -16,8 +16,8 @@ export default function NotesApp() {
   }
 
   async function handleAdd() {
-    console.log("handleAdd");
     if (!text.trim()) return;
+    console.log("handleAdd", text);
 
     try {
       await createnote(text);

@@ -23,7 +23,9 @@ export async function fetchNotes() {
 }
 
 export async function createnote(text) {
+  console.log("create note executed");
   const token = await requestToken();
+  console.log("token resolved", token);
   if (!token) throw new Error("Not authenticated");
   const res = await fetch(`${API_BASE}/notes`, {
     method: "POST",
@@ -33,6 +35,7 @@ export async function createnote(text) {
     },
     body: JSON.stringify({ text }),
   });
+  console.log("fetch executed", res);
   if (!res.ok) {
     throw new Error("Failed ");
   }
